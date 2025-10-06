@@ -1,6 +1,6 @@
 # Командлет сбора и обработка инвентаризационной информации
 
-## Командлет позволяет выполнять:
+## Командлет позволяет выполнять
 - удаленный сбор инвентаризационной информации
 - локальный сбор инвентаризационной информации
 - обработку (объединение) инвентаризационной информации собранной с нескольких компьютеров.
@@ -60,7 +60,7 @@ $Parameters = @(
 ```
 
 ## Примеры использования
-### Удаленный сбор информации:
+### Удаленный сбор информации
 
 - Собрать инвентаризационную информацию со всех объектов из InvOU (distinguishedName) домена, расположений инвентаризацинный файлов по компютерам C:\Inventory\Src\Results\InvAnyComputers, результирующих файлов C:\Inventory\Src\Results\InvResult
 
@@ -85,17 +85,18 @@ Start-Inventory -StartType InvRemote -InvFolderAnyComputers C:\Inventory\Src\Res
 ```powershell
 Start-Inventory -StartType InvRemote -InvFolderAnyComputers C:\Inventory\Src\Results\InvAnyComputers -InvFolderResult C:\InventorySrc\Results\\InvResult -InvComputerList file:Computers.csv
 ```
+### Локальный сбор информации
+- Собрать инвентаризационную информацию с локального компьютера, данные поместить в каталог C:\Inventory\Src\Results\InvAnyComputers, создать ZIP архив в каталоге InvFolderZIPFiles
+```powershell
+Start-Inventory -StartType InvLocal -InvFolderAnyComputers C:\Inventory\Src\Results\InvAnyComputers -InvFolderZIPFiles C:\Src\Results\Inventory\ZIP
+```
+### Обработка информации
 - Выполнить обработку собранной инвентаризационной информации
 ```powershell
 Start-Inventory -StartType CreateResult
 ```
 
-- Собрать инвентаризационную информацию с локального компьютера, данные поместить в каталог C:\Inventory\Src\Results\InvAnyComputers, создать ZIP архив в каталоге InvFolderZIPFiles
-```powershell
-Start-Inventory -StartType InvLocal -InvFolderAnyComputers C:\Inventory\Src\Results\InvAnyComputers -InvFolderZIPFiles C:\Src\Results\Inventory\ZIP
-```
-
-## Структура:
+## Структура
 
 ```
 
